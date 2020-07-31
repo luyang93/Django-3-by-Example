@@ -1,7 +1,9 @@
 {% extends "blog/base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 {% block content %}
-    <h1>{{ post.title }}</h1>
+    <h1>
+        {{ post.title }}
+    </h1>
     <p class="date">
         Published {{ post.publish }} by {{ post.author }}
     </p>
@@ -25,17 +27,23 @@
             {{ comment.body|linebreaks }}
         </div>
     {% empty %}
-        <p>There are no comments yet.</p>
+        <p>
+            There are no comments yet.
+        </p>
     {% endfor %}
     {% if new_comment %}
-        <h2>Your comment has been added.</h2>
+        <h2>
+            Your comment has been added.
+        </h2>
     {% else %}
-        <h2>Add a new comment</h2>
+        <h2>
+            Add a new comment
+        </h2>
         <form method="post">
             {{ comment_form.as_p }}
             {% csrf_token %}
-            <p
-            ><input type="submit" value="Add comment">
+            <p>
+                <input type="submit" value="Add comment">
             </p>
         </form>
     {% endif %}
