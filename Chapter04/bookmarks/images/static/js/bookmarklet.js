@@ -46,7 +46,7 @@
                 '_blank');
         });
 
-    };
+    }
 
     // Check if jQuery is loaded
     if (typeof window.jQuery != 'undefined') {
