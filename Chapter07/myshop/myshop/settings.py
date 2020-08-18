@@ -130,3 +130,11 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = False
 SESSION_SAVE_EVERY_REQUEST = False
 
 CART_SESSION_ID = 'cart'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'admin@example.com'
+EMAIL_HOST = 'smtp.example.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'admin@example.com'
+EMAIL_HOST_PASSWORD = 'password'
+EMAIL_USE_SSL = True
