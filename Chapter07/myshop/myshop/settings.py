@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
+import braintree
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -138,3 +140,14 @@ EMAIL_PORT = 465
 EMAIL_HOST_USER = 'admin@example.com'
 EMAIL_HOST_PASSWORD = 'password'
 EMAIL_USE_SSL = True
+
+# Braintree settings
+BRAINTREE_MERCHANT_ID = 'xh96ps9mjyqnm2kp'  # Merchant ID
+BRAINTREE_PUBLIC_KEY = 'dpy5g3rpmqstk7kx'  # Public Key
+BRAINTREE_PRIVATE_KEY = '4cd9074111d2b0498b68dc27370c4c6e'  # Private key
+BRAINTREE_CONF = braintree.Configuration(
+    braintree.Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
