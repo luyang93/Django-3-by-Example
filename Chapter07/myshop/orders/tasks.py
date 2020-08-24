@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from celery import task
+from celery.task import task
 from django.core.mail import send_mail
 
 from .models import Order
