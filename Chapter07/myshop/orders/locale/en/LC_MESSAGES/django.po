@@ -17,40 +17,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: cart/forms.py:8
-msgid "Quantity"
+#: orders/models.py:12
+msgid "first name"
 msgstr ""
 
-#: coupons/forms.py:6
-msgid "Coupon"
+#: orders/models.py:13
+msgid "last name"
 msgstr ""
 
-#: myshop/settings.py:118
-msgid "English"
+#: orders/models.py:14
+msgid "e-mail"
 msgstr ""
 
-#: myshop/settings.py:119
-msgid "Spanish"
+#: orders/models.py:15
+msgid "address"
 msgstr ""
 
-#: shop/templates/shop/base.html:8 shop/templates/shop/base.html:15
-msgid "My shop"
+#: orders/models.py:16
+msgid "postal code"
 msgstr ""
 
-#: shop/templates/shop/base.html:24
+#: orders/models.py:17
+msgid "city"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:4
+#: orders/templates/orders/order/create.html:8
+msgid "Checkout"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:12
+msgid "Your order"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:23
 #, python-format
 msgid ""
 "\n"
-"                        %(items)s item, $%(total)s\n"
+"                        \"%(code)s\" (%(discount)s%% off)\n"
 "                    "
-msgid_plural ""
-"\n"
-"                        %(items)s items, $%(total)s\n"
-"                    "
-msgstr[0] ""
-msgstr[1] ""
+msgstr ""
 
-#: shop/templates/shop/base.html:31
-msgid "Your cart is empty."
+#: orders/templates/orders/order/create.html:31
+msgid "Total"
+msgstr ""
+
+#: orders/templates/orders/order/create.html:37
+msgid "Place order"
 msgstr ""
