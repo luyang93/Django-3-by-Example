@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-25 18:05+0800\n"
-"PO-Revision-Date: 2020-08-25 13:24+0000\n"
+"POT-Creation-Date: 2020-08-25 21:33+0800\n"
+"PO-Revision-Date: 2020-08-25 13:35+0000\n"
 "Last-Translator: b'  <510426762@qq.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -20,62 +20,54 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: orders/models.py:12
-#, fuzzy
 msgid "first name"
-msgstr "first name_T"
+msgstr ""
 
 #: orders/models.py:13
-#, fuzzy
 msgid "last name"
-msgstr "last name_T"
+msgstr ""
 
 #: orders/models.py:14
-#, fuzzy
 msgid "e-mail"
-msgstr "e-mail_T"
+msgstr ""
 
 #: orders/models.py:15
-#, fuzzy
 msgid "address"
-msgstr "address_T"
+msgstr ""
 
 #: orders/models.py:16
-#, fuzzy
 msgid "postal code"
-msgstr "postal code_T"
+msgstr ""
 
 #: orders/models.py:17
-#, fuzzy
 msgid "city"
-msgstr "city_T"
+msgstr ""
 
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:8
-#, fuzzy
 msgid "Checkout"
-msgstr "Checkout_T"
+msgstr ""
 
 #: orders/templates/orders/order/create.html:12
-#, fuzzy
 msgid "Your order"
-msgstr "Your order_T"
+msgstr ""
 
 #: orders/templates/orders/order/create.html:23
-#, python-format, fuzzy
+#, python-format
 msgid ""
 "\n"
 "                        \"%(code)s\" (%(discount)s%% off)\n"
 "                    "
 msgstr ""
-"\n"
-"\"%(code)s\" (%(discount)s%% off_T)"
 
 #: orders/templates/orders/order/create.html:31
-#, fuzzy
 msgid "Total"
-msgstr "Total_T"
+msgstr ""
 
 #: orders/templates/orders/order/create.html:37
-#, fuzzy
 msgid "Place order"
-msgstr "Place order_T"
+msgstr ""
+
+#: orders/urls.py:9
+msgid "create/"
+msgstr ""
