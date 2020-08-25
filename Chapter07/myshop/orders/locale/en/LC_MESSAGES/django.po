@@ -9,59 +9,73 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-25 18:05+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-08-25 13:24+0000\n"
+"Last-Translator: b'  <510426762@qq.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
 #: orders/models.py:12
+#, fuzzy
 msgid "first name"
-msgstr ""
+msgstr "first name_T"
 
 #: orders/models.py:13
+#, fuzzy
 msgid "last name"
-msgstr ""
+msgstr "last name_T"
 
 #: orders/models.py:14
+#, fuzzy
 msgid "e-mail"
-msgstr ""
+msgstr "e-mail_T"
 
 #: orders/models.py:15
+#, fuzzy
 msgid "address"
-msgstr ""
+msgstr "address_T"
 
 #: orders/models.py:16
+#, fuzzy
 msgid "postal code"
-msgstr ""
+msgstr "postal code_T"
 
 #: orders/models.py:17
+#, fuzzy
 msgid "city"
-msgstr ""
+msgstr "city_T"
 
 #: orders/templates/orders/order/create.html:4
 #: orders/templates/orders/order/create.html:8
+#, fuzzy
 msgid "Checkout"
-msgstr ""
+msgstr "Checkout_T"
 
 #: orders/templates/orders/order/create.html:12
+#, fuzzy
 msgid "Your order"
-msgstr ""
+msgstr "Your order_T"
 
 #: orders/templates/orders/order/create.html:23
-#, python-format
+#, python-format, fuzzy
 msgid ""
 "\n"
 "                        \"%(code)s\" (%(discount)s%% off)\n"
 "                    "
 msgstr ""
+"\n"
+"\"%(code)s\" (%(discount)s%% off_T)"
 
 #: orders/templates/orders/order/create.html:31
+#, fuzzy
 msgid "Total"
-msgstr ""
+msgstr "Total_T"
 
 #: orders/templates/orders/order/create.html:37
+#, fuzzy
 msgid "Place order"
-msgstr ""
+msgstr "Place order_T"

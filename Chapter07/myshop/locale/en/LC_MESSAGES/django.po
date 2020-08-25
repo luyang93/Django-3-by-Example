@@ -9,37 +9,43 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-25 18:05+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-08-25 13:24+0000\n"
+"Last-Translator: b'  <510426762@qq.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: cart/forms.py:8
+#, fuzzy
 msgid "Quantity"
-msgstr ""
+msgstr "Quantity_T"
 
 #: coupons/forms.py:6
+#, fuzzy
 msgid "Coupon"
-msgstr ""
+msgstr "Coupon_T"
 
 #: myshop/settings.py:118
+#, fuzzy
 msgid "English"
-msgstr ""
+msgstr "Coupon_T"
 
 #: myshop/settings.py:119
+#, fuzzy
 msgid "Spanish"
-msgstr ""
+msgstr "Spanish_T"
 
 #: shop/templates/shop/base.html:8 shop/templates/shop/base.html:15
+#, fuzzy
 msgid "My shop"
-msgstr ""
+msgstr "My shop_T"
 
 #: shop/templates/shop/base.html:24
-#, python-format
+#, python-format, fuzzy
 msgid ""
 "\n"
 "                        %(items)s item, $%(total)s\n"
@@ -49,8 +55,13 @@ msgid_plural ""
 "                        %(items)s items, $%(total)s\n"
 "                    "
 msgstr[0] ""
+"\n"
+"%(items)s item_T, $%(total)s"
 msgstr[1] ""
+"\n"
+"%(items)s items_T, $%(total)s"
 
 #: shop/templates/shop/base.html:31
+#, fuzzy
 msgid "Your cart is empty."
-msgstr ""
+msgstr "Your cart is empty_T."
