@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rosetta',
     'parler',
+    'localflavor',
 ]
 
 MIDDLEWARE = [
