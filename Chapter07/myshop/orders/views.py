@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
 from django.template.loader import render_to_string
 from django.urls import reverse
-
+from shop.recommender import Recommender
 from cart.cart import Cart
 from .forms import OrderCreateForm
 from .models import Order, OrderItem
@@ -14,6 +14,7 @@ from .tasks import order_created
 
 def order_create(request):
     cart = Cart(request)
+    r = Recommender()
     if request.method == "POST":
         form = OrderCreateForm(request.POST)
         if form.is_valid():
@@ -24,6 +25,7 @@ def order_create(request):
             order.save()
             for item in cart:
                 OrderItem.objects.create(order=order, product=item['product'], price=item['price'], quantity=item['quantity'])
+            r.products_bought([item['product'] for item in cart])
             # clear the cart
             cart.clear()
             # launch asynchronous task
