@@ -9,7 +9,7 @@ class OrderField(models.PositiveIntegerField):
 
     def pre_save(self, model_instance, add):
         if getattr(model_instance, self.attname) is None:
-            # no cuttent value
+            # no current value
             try:
                 qs = self.model.objects.all()
                 if self.for_fields:
