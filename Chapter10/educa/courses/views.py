@@ -1,4 +1,4 @@
-from braces.views import CsrfExemptMixin, JSONRequestResponseMixin
+from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.forms.models import modelform_factory
@@ -8,9 +8,8 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
 
-from .forms import ModuleFormset
-from .models import Course
-from .models import Module, Content
+from .forms import ModuleFormSet
+from .models import Course, Module, Content
 
 
 class OwnerMixin(object):
@@ -60,7 +59,7 @@ class CourseModuleUpdateView(TemplateResponseMixin, View):
     course = None
 
     def get_formset(self, data=None):
-        return ModuleFormset(
+        return ModuleFormSet(
             instance=self.course,
             data=data
         )
@@ -102,7 +101,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
     template_name = 'courses/manage/content/form.html'
 
     def get_model(self, model_name):
-        if model_name in ['text', 'video', 'image', 'field']:
+        if model_name in ['text', 'video', 'image', 'file']:
             return apps.get_model(
                 app_label='courses',
                 model_name=model_name
@@ -112,7 +111,8 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
     def get_form(self, model, *args, **kwargs):
         Form = modelform_factory(
             model,
-            exclude=[
+            exclude=
+            [
                 'owner',
                 'order',
                 'created',
@@ -159,7 +159,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
             if not id:
                 # new content
                 Content.objects.create(
-                    module=self.model,
+                    module=self.module,
                     item=obj
                 )
             return redirect('module_content_list', self.module.id)
@@ -179,6 +179,7 @@ class ContentDeleteView(View):
             module__course__owner=request.user
         )
         module = content.module
+        content.item.delete()
         content.delete()
         return redirect('module_content_list', module.id)
 
@@ -201,7 +202,7 @@ class ModuleContentListView(TemplateResponseMixin, View):
 
 class ModuleOrderView(
     CsrfExemptMixin,
-    JSONRequestResponseMixin,
+    JsonRequestResponseMixin,
     View
 ):
     def post(self, request):
@@ -219,7 +220,7 @@ class ModuleOrderView(
 
 class ContentOrderView(
     CsrfExemptMixin,
-    JSONRequestResponseMixin,
+    JsonRequestResponseMixin,
     View
 ):
     def post(self, request):

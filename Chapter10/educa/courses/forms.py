@@ -2,7 +2,7 @@ from django.forms.models import inlineformset_factory
 
 from .models import Course, Module
 
-ModuleFormset = inlineformset_factory(
+ModuleFormSet = inlineformset_factory(
     Course,
     Module,
     fields=[
