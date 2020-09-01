@@ -1,6 +1,7 @@
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
 from django.apps import apps
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.core.cache import cache
 from django.db.models import Count
 from django.forms.models import modelform_factory
 from django.shortcuts import redirect, get_object_or_404
@@ -9,7 +10,7 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic.list import ListView
-from django.core.cache import cache
+
 from students.forms import CourseEnrollForm
 from .forms import ModuleFormSet
 from .models import Course, Module, Content, Subject
@@ -250,7 +251,7 @@ class CourseListView(TemplateResponseMixin, View):
                 total_courses=Count('courses')
             )
             cache.set('all_subjects', subjects)
-        courses = Course.objects.annotate(
+        all_courses = Course.objects.annotate(
             total_modules=Count('modules')
         )
         if subject:
@@ -258,9 +259,16 @@ class CourseListView(TemplateResponseMixin, View):
                 Subject,
                 slug=subject
             )
-            courses = courses.filter(
-                subject=subject
-            )
+            key = f'subject_{subject.id}_courses'
+            courses = cache.get(key)
+            if not courses:
+                courses = all_courses.filter(subject=subject)
+                cache.set(key, courses)
+        else:
+            courses = cache.get('all_courses')
+            if not courses:
+                courses = all_courses
+                cache.set('all_courses', courses)
         return self.render_to_response(
             {
                 'subjects': subjects,
