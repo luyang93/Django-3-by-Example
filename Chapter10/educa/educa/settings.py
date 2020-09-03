@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     'embed_video',
     'rest_framework',
+    'chat',
 ]
 
 MIDDLEWARE = [
