@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('course/', include('courses.urls')),
     path('students/', include('students.urls')),
-    path('api/', include('courses.api.urls'))
+    path('api/', include('courses.api.urls')),
+    path('chat/', include('chat.urls', namespace='chat')),
 ]
 
 if settings.DEBUG:
