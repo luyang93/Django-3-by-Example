@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     'embed_video',
     'rest_framework',
+    'chat',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +131,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ASGI_APPLICATION = 'educa.routing.application'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379)],
+        },
+    },
+}
