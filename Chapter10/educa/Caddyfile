@@ -1,0 +1,26 @@
+{
+    debug
+    email   admin@example.com
+    admin   off
+    http_port   20080
+    http_port   20043
+}
+
+:10001 {
+    root * /home/django/luyang/Django-3-by-Example/Chapter10/educa
+    file_server /static/*
+    @css {
+        path_regexp .css
+    }
+    @js {
+        path_regexp .js
+    }
+    header @css Content-Type text/css
+    header @js Content-Type text/js
+    @notStatic {
+        not path /static/*
+    }
+    tls /home/django/resyz.tk/fullchain.pem /home/django/resyz.tk/privkey.pem
+    reverse_proxy /ws/* 127.0.0.1:8001
+    reverse_proxy @notStatic 127.0.0.1:8000
+}
