@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-caddy run -config Caddyfile
+./caddy run -config Caddyfile

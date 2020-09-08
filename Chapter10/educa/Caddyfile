@@ -21,6 +21,10 @@
         not path /static/*
     }
     tls /home/django/resyz.tk/fullchain.pem /home/django/resyz.tk/privkey.pem
-    reverse_proxy /ws/* 127.0.0.1:8001
-    reverse_proxy @notStatic 127.0.0.1:8000
+    reverse_proxy /ws/* {
+        to 127.0.0.1:8001
+    }
+    reverse_proxy @notStatic {
+        to 127.0.0.1:8000
+    }
 }

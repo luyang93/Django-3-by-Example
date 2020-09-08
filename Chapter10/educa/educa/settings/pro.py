@@ -6,7 +6,7 @@ ADMINS = (
     ('luyang', '510426762@qq.com'),
 )
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.resyz.tk']
 
 DATABASES = {
     'default': {
